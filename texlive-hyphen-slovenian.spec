@@ -1,5 +1,11 @@
+# revision 23092
+# category TLCore
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-hyphen-slovenian
-Version:	20111102
+Version:	20111103
 Release:	1
 Summary:	Slovenian hyphenation patterns
 Group:		Publishing
@@ -47,6 +53,7 @@ encodings.
 %_texmf_language_dat_d/hyphen-slovenian
 %_texmf_language_def_d/hyphen-slovenian
 %_texmf_language_lua_d/hyphen-slovenian
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -55,6 +62,8 @@ encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-slovenian <<EOF
 %% from hyphen-slovenian:
