@@ -45,13 +45,13 @@ encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-slovenian <<EOF
-%% from hyphen-slovenian:
+\%\% from hyphen-slovenian:
 slovenian loadhyph-sl.tex
 =slovene
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-slovenian <<EOF
-%% from hyphen-slovenian:
+\%\% from hyphen-slovenian:
 \addlanguage{slovenian}{loadhyph-sl.tex}{}{2}{2}
 \addlanguage{slovene}{loadhyph-sl.tex}{}{2}{2}
 EOF
