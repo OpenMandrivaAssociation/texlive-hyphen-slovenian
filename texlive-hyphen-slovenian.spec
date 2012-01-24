@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-slovenian
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Slovenian hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -45,16 +45,18 @@ encodings.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-slovenian <<EOF
-\%\% from hyphen-slovenian:
+\%% from hyphen-slovenian:
 slovenian loadhyph-sl.tex
 =slovene
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-slovenian
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-slovenian <<EOF
-\%\% from hyphen-slovenian:
+\%% from hyphen-slovenian:
 \addlanguage{slovenian}{loadhyph-sl.tex}{}{2}{2}
 \addlanguage{slovene}{loadhyph-sl.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-slovenian
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-slovenian <<EOF
 -- from hyphen-slovenian:
