@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-slovenian
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Slovenian hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
