@@ -32,6 +32,8 @@ encodings.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 %_texmf_language_dat_d/hyphen-slovenian
 %_texmf_language_def_d/hyphen-slovenian
 %_texmf_language_lua_d/hyphen-slovenian
@@ -43,6 +45,9 @@ encodings.
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-slovenian <<EOF
 \%% from hyphen-slovenian:
